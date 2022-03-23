@@ -101,7 +101,7 @@
         }
     }
     if (animated) {
-//        disappearingViewController.navigationController.km_backgroundViewHidden = YES;
+        disappearingViewController.navigationController.km_backgroundViewHidden = YES;
     }
     return [self km_popViewControllerAnimated:animated];
 }
