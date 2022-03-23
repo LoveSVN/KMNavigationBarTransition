@@ -71,9 +71,9 @@
     [self km_restoreScrollViewContentInsetAdjustmentBehaviorIfNeeded];
     UIViewController *transitionViewController = self.navigationController.km_transitionContextToViewController;
     if (self.km_transitionNavigationBar) {
-        if (@available(iOS 15, *)) {
-            self.navigationController.navigationBar.standardAppearance = self.km_transitionNavigationBar.standardAppearance;
-            self.navigationController.navigationBar.scrollEdgeAppearance = self.km_transitionNavigationBar.scrollEdgeAppearance;
+        if (@available(iOS 13, *)) {
+//            self.navigationController.navigationBar.standardAppearance = self.km_transitionNavigationBar.standardAppearance;
+//            self.navigationController.navigationBar.scrollEdgeAppearance = self.km_transitionNavigationBar.scrollEdgeAppearance;
         } else {
             self.navigationController.navigationBar.barTintColor = self.km_transitionNavigationBar.barTintColor;
             [self.navigationController.navigationBar setBackgroundImage:[self.km_transitionNavigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
@@ -140,9 +140,9 @@
     if (bar.translucent != self.navigationController.navigationBar.translucent) {
         bar.translucent = self.navigationController.navigationBar.translucent;
     }
-    if (@available(iOS 15, *)) {
-        bar.standardAppearance = self.navigationController.navigationBar.standardAppearance;
-        bar.scrollEdgeAppearance = self.navigationController.navigationBar.scrollEdgeAppearance;
+    if (@available(iOS 13, *)) {
+        bar.standardAppearance = self.navigationItem.standardAppearance;
+        bar.scrollEdgeAppearance = self.navigationItem.scrollEdgeAppearance;
     } else {
         bar.barTintColor = self.navigationController.navigationBar.barTintColor;
         [bar setBackgroundImage:[self.navigationController.navigationBar backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
